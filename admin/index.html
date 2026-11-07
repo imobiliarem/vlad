@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Macor Admin</title>
+<meta name="apple-mobile-web-app-title" content="Macor Admin">
+<meta name="application-name" content="Macor Admin">
+<meta name="theme-color" content="#151F45">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#151F45;--blue:#233775;--muted:#4F566E;--bg:#FBFAF7;--line:#E6E3DA}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:center;background:var(--bg);font-family:Poppins,system-ui,sans-serif;color:var(--navy);padding:24px}
+  .box{max-width:360px;width:100%;text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center}
+  img{width:96px;height:96px;border-radius:22px;box-shadow:0 6px 24px rgba(21,31,69,.12)}
+  h1{margin:0;font-size:20px;font-weight:600}
+  p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+  a.btn{display:block;width:100%;min-height:48px;line-height:48px;border-radius:12px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="box">
+  <img src="apple-touch-icon.png" alt="Macor Imobiliare">
+  <h1>Macor Administrare</h1>
+  <p>Se deschide aplicația… Dacă nu se deschide singură, apasă butonul.</p>
+  <a class="btn" id="go" href="https://claude.ai/artifact/5akkPCgoTBUCuWHFaZ5YuD">Deschide Macor Administrare</a>
+  <p>Pe iPhone: în Safari → Partajează → „Adaugă pe ecranul principal”.</p>
+</div>
+<script>
+  // Când e deschisă de pe ecranul principal, merge direct în aplicație.
+  var standalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+  if (standalone) { location.replace(document.getElementById('go').href); }
+</script>
+</body>
+</html>
